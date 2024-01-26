@@ -17,3 +17,20 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a, int &b, int &c, int &d) {
+    int temp;
+    int order[] = {a, b, c, d};
+
+    for (int i = 3; i > 0; --i) {
+        int j = rand() % (i + 1);
+        temp = order[i];
+        order[i] = order[j];
+        order[j] = temp;
+    }
+
+    a = order[0];
+    b = order[1];
+    c = order[2];
+    d = order[3];
+}
